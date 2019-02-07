@@ -1,0 +1,10 @@
+<h1>Choose a pet</h1>
+<ul>
+<% pets.forEach((pet) => { %>
+
+<div>
+    <li><%= pet.name %> <a href="/pets/<%=pet._id%>">More info</a></li>
+</div>
+
+  <% }) %>
+  </ul>
