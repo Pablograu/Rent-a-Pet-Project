@@ -6,3 +6,27 @@ body {
 a {
   color: #00B7FF;
 }
+
+header{
+  background-color: #2081C3;
+  width: 100%;
+}
+.navbar{
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+header ul li{
+  display: inline-block;
+  padding: 0 5px;
+}
+
+header ul{
+  list-style: none;
+}
+
+header a{
+  color: #1a1b1c;
+  text-decoration: none;
+}

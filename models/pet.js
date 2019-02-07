@@ -6,7 +6,7 @@ const { ObjectId } = Schema.Types;
 const petSchema = new Schema({
   name: { type: String, unique: true },
   description: String,
-  owner: ObjectId, // duda
+  owner: { type: ObjectId, ref: 'User' }, // duda
   date: String,
   image: String,
   days: Number,

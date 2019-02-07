@@ -18,11 +18,11 @@ router.get('/', (req, res, next) => {
 router.post('/pets', (req, res, next) => {
   console.log(req.body);
   const {
-    name, description, date, days,
+    name, description, date, days, image,
   } = req.body; // this creates 3 vars from
 
   Pet.create({
-    name, description, date, days,
+    name, description, date, days, image,
   })
     .then(() => {
       console.log('added pet!');
