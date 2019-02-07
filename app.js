@@ -7,7 +7,7 @@ const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-const protectedRoute = require('./middlwwares/protectedRoute');
+const protectedRoute = require('./middlewares/protectedRoute');
 
 //  Change the title of database
 mongoose
