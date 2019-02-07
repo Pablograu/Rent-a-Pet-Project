@@ -8,6 +8,7 @@ const petSchema = new Schema({
   description: String,
   owner: ObjectId, // duda
   date: String,
+  image: String,
   days: Number,
   review: [],
 
