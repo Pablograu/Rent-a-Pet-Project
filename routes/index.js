@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
   if (req.session.currentUser) {
     Pet.find({})
       .then((pets) => {
-        res.render('pets/pets', { pets });
+        res.render('pets/pets', { pets, title: 'Rent-a-Pet' });
       })
       .catch((error) => {
         next(error);

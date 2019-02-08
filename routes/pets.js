@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', (req, res, next) => {
   Pet.find({})
     .then((pets) => {
-      res.render('pets/pets', { pets });
+      res.render('pets/pets', { pets, title: 'rent-a-pet' });
     })
     .catch((error) => {
       next(error);
