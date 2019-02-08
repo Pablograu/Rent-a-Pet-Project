@@ -15,12 +15,13 @@ router.get('/signup', (req, res, next) => {
 router.post('/signup', (req, res, next) => {
   const { username } = req.body;
   const { password } = req.body;
+  const { email } = req.body;
   const salt = bcrypt.genSaltSync(bcryptSalt);
   const hashPass = bcrypt.hashSync(password, salt);
 
-  if (username === '' || password === '') {
+  if (username === '' || password === '' || email === '') {
     res.render('auth/signup', {
-      errorMessage: 'Indicate a username and a password to sign up',
+      errorMessage: 'Indicate a username, email and a password to sign up',
     });
     return;
   }
@@ -33,6 +34,7 @@ router.post('/signup', (req, res, next) => {
       } else {
         User.create({
           username,
+          email,
           password: hashPass,
         })
           .then(() => {
