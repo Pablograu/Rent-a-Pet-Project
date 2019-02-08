@@ -4,4 +4,8 @@
   <button>Log out</button>
 </form>
 
-<p><%=pets[1].name%></p>
+<ul>
+<% for(var i=0; i < pets.length; i++) { %>
+  <li><%= pets[i].name %></li>
+<% } %>
+</ul>
