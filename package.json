@@ -10,9 +10,13 @@
     "axios": "^0.18.0",
     "bcrypt": "^3.0.4",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "body-parser": "^1.18.3",
 =======
 >>>>>>> 0894077c0cf64940ff74eed621866f6a3ca6f445
+=======
+    "bootstrap": "^3.4.0",
+>>>>>>> bd41a44336b867cfdd3aa17483776429cc4d5c55
     "connect-mongo": "^2.0.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",

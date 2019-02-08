@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const protectedRoute = require('./middlewares/protectedRoute');
-
+// const bootstrap = require('bootstrap')
 //  Change the title of database
 mongoose
   .connect('mongodb://localhost/rentapet', { useNewUrlParser: true })

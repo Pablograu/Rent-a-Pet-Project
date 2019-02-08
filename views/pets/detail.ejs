@@ -1,5 +1,12 @@
+<%- include('../partials/header'); %>
+
 <h2>Details</h2>
-<p><%=pet.name%></p>
-<p><%=pet.description%></p>
-<p><%=pet.date%></p>
-<p><%=pet.days%></p>
+<div class="container-fluid">
+  <img src="<%=pet.image%>" alt="" width="150px">
+  <p>Name: <%=pet.name%></p>
+  <p>About: <%=pet.description%></p>
+  <p>Available from: <%=pet.date%></p>
+  <p>Days: <%=pet.days%></p>
+  <a type="button" class="btn btn-primary" href="#">Adopt Me</a>
+</div>
+
