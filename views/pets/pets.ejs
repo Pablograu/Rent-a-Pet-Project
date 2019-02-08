@@ -6,10 +6,10 @@
 <h1><%= title %></h1>
 <ul>
 <% pets.forEach((pet) => { %>
-
+<%if(pet.adopter === undefined){%>
 <div>
     <li><%= pet.name %> <a href="/pets/<%=pet._id%>">More info</a></li>
 </div>
-
+<% }%>
   <% }) %>
   </ul>

@@ -7,7 +7,6 @@ const router = express.Router();
 router.get('/', (req, res, next) => {
   Pet.find({ adopter: req.session.currentUser._id })
     .then((pets) => {
-      console.log("we're console loging ", pets);
       res.render('users', { pets });
     });
   // res.send('respond with a resource');
