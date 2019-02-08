@@ -48,4 +48,25 @@ router.get('/:id', (req, res, next) => {
     });
 });
 
+router.post('/:id', (req, res, next) => {
+  const { id } = req.params;
+  Pet.findOne(id)
+    .then((pet) => {
+      res.render('/users', { pet });
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
+router.post('/adopt/:id', (req, res, next) => {
+  const { id } = req.params;
+  const adopterId = req.session.currentUser._id;
+  Pet.findByIdAndUpdate(id, { adopter: adopterId })
+
+    .then(() => {
+      res.redirect('/users');
+    });
+});
+
 module.exports = router;
