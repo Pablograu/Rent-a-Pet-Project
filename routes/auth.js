@@ -20,31 +20,30 @@ router.post('/signup', (req, res, next) => {
   const hashPass = bcrypt.hashSync(password, salt);
 
   if (username === '' || password === '' || email === '') {
-    res.render('auth/signup', {
-      errorMessage: 'Indicate a username, email and a password to sign up',
-    });
-    return;
-  }
-  User.findOne({ username })
-    .then((user) => {
-      if (user) {
-        res.render('auth/signup', {
-          errorMessage: 'User exists',
-        });
-      } else {
-        User.create({
-          username,
-          email,
-          password: hashPass,
-        })
-          .then(() => {
-            res.redirect('/');
-          })
-          .catch((error) => {
-            next(error);
+    req.flash('error', 'empty fields by flash');
+    res.redirect('signup');
+  } else {
+    User.findOne({ username })
+      .then((user) => {
+        if (user) {
+          res.render('auth/signup', {
+            errorMessage: 'User exists',
           });
-      }
-    });
+        } else {
+          User.create({
+            username,
+            email,
+            password: hashPass,
+          })
+            .then(() => {
+              res.redirect('/');
+            })
+            .catch((error) => {
+              next(error);
+            });
+        }
+      });
+  }
 });
 
 router.get('/login', (req, res, next) => {

@@ -7,6 +7,8 @@ const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const flash = require('connect-flash');
+const notifications = require('./middlewares/notifications');
 const protectedRoute = require('./middlewares/protectedRoute');
 // const bootstrap = require('bootstrap')
 //  Change the title of database
@@ -46,6 +48,8 @@ app.use((req, res, next) => {
   app.locals.currentUser = req.session.currentUser;
   next();
 });
+app.use(flash());
+app.use(notifications);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
