@@ -10,6 +10,7 @@ const petSchema = new Schema({
   date: String,
   image: String,
   days: Number,
+  adopter: { type: ObjectId, ref: 'User' },
   review: [],
 
 }, {
