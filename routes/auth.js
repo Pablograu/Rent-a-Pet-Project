@@ -36,8 +36,8 @@ router.post('/signup', (req, res, next) => {
               next(error);
             });
         } else {
-          req.flash('error', 'incorrect');
-          res.redirect('/auth/signup');
+          req.flash('error', 'User already exists');
+          res.redirect('signup');
         }
       })
       .catch((error) => {
@@ -55,28 +55,23 @@ router.post('/login', (req, res, next) => {
   const { password } = req.body;
 
   if (username === '' || password === '') {
-    res.render('auth/login', {
-      errorMessage: 'Indicate a username and a password to sign up',
-    });
-    return;
+    req.flash('error', 'Username and password are required');
+    res.redirect('login');
   }
 
   User.findOne({ username })
     .then((user) => {
       if (!user) {
-        res.render('auth/login', {
-          errorMessage: "The username doesn't exist",
-        });
-        return;
+        req.flash('error', 'Username does not exist');
+        res.redirect('login');
       }
       if (bcrypt.compareSync(password, user.password)) {
         // Save the login in the session!
         req.session.currentUser = user;
         res.redirect('/');
       } else {
-        res.render('auth/login', {
-          errorMessage: 'Incorrect password',
-        });
+        req.flash('error', 'Incorrect password');
+        res.redirect('login');
       }
     })
     .catch((error) => {

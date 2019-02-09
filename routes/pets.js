@@ -3,8 +3,6 @@ const Pet = require('../models/pet');
 
 const router = express.Router();
 
-/* GET users listing. */
-/* GET celeb listing. */
 router.get('/', (req, res, next) => {
   Pet.find({})
     .then((pets) => {
@@ -26,6 +24,7 @@ router.post('/pets', (req, res, next) => {
   })
     .then(() => {
       console.log('added pet!');
+      req.flash('success', 'Pet added!');
       res.redirect('/pets');
     })
     .catch((error) => {
@@ -61,7 +60,7 @@ router.post('/:id', (req, res, next) => {
 
 router.post('/adopt/:id', (req, res, next) => {
   const { id } = req.params;
-  const adopterId = req.session.currentUser._id;
+  const adopterId = req.session.currentUser.id;
   Pet.findByIdAndUpdate(id, { adopter: adopterId })
 
     .then(() => {
