@@ -15,15 +15,15 @@ router.get('/', (req, res, next) => {
 
 router.post('/pets', (req, res, next) => {
   console.log(req.body);
+  const owner = req.session.currentUser._id;
   const {
     name, description, date, days, image,
   } = req.body; // this creates 3 vars from
 
   Pet.create({
-    name, description, date, days, image,
+    name, description, owner, date, days, image,
   })
     .then(() => {
-      console.log('added pet!');
       req.flash('success', 'Pet added!');
       res.redirect('/pets');
     })
@@ -68,4 +68,7 @@ router.post('/adopt/:id', (req, res, next) => {
     });
 });
 
+router.get('/users', (req, res, next) => { // this shows form to user
+  res.render('users');
+});
 module.exports = router;
