@@ -60,7 +60,7 @@ router.post('/:id', (req, res, next) => {
 
 router.post('/adopt/:id', (req, res, next) => {
   const { id } = req.params;
-  const adopterId = req.session.currentUser.id;
+  const adopterId = req.session.currentUser._id;
   Pet.findByIdAndUpdate(id, { adopter: adopterId })
 
     .then(() => {
