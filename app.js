@@ -46,6 +46,7 @@ app.use(session({
 // note2: if using passport, req.user instead
 app.use((req, res, next) => {
   app.locals.currentUser = req.session.currentUser;
+  res.locals.currentUser = req.session.currentUser;
   next();
 });
 app.use(flash());
