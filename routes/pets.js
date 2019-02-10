@@ -15,17 +15,19 @@ router.get('/', (req, res, next) => {
 
 router.post('/pets', (req, res, next) => {
   console.log(req.body);
-  const owner = req.session.currentUser._id;
+  const ownerName = req.session.currentUser.username;
+  const ownerId = req.session.currentUser._id;
   const {
     name, description, date, days, image,
   } = req.body; // this creates 3 vars from
 
   Pet.create({
-    name, description, owner, date, days, image,
+    name, description, ownerName, ownerId, date, days, image,
   })
     .then(() => {
       req.flash('success', 'Pet added!');
       res.redirect('/pets');
+      console.log('pet added succesfully');
     })
     .catch((error) => {
       console.log(error);
