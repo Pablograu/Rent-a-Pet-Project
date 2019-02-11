@@ -17,12 +17,14 @@ router.post('/pets', (req, res, next) => {
   console.log(req.body);
   const ownerName = req.session.currentUser.username;
   const ownerId = req.session.currentUser._id;
+  const isPending = false;
+  const isAdopted = false;
   const {
     name, description, startDay, endDay, image,
   } = req.body; // this creates few vars at once
 
   Pet.create({
-    name, description, ownerName, ownerId, startDay, endDay, image,
+    name, description, ownerName, ownerId, startDay, endDay, image, isPending, isAdopted,
   })
     .then(() => {
       req.flash('success', 'Pet added!');

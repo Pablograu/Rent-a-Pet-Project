@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -13,8 +12,8 @@ header{
 }
 .navbar{
   display: flex;
-  justify-content: left;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header ul li{
@@ -29,4 +28,11 @@ header ul{
 header a{
   color: #1a1b1c;
   text-decoration: none;
+}
+
+.confirmBtn {
+  border-radius: 2px;
+  color: white;
+  padding: 0.5rem;
+  background-color: #2081C3;
 }
