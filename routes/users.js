@@ -21,9 +21,6 @@ router.get('/', (req, res, next) => {
 router.post('/:id/confirm', (req, res, next) => {
   const { id } = req.params;
   Pet.findByIdAndUpdate(id, { isPending: false, isAdopted: true })
-  // .then(() => {
-
-    // })
     .then((pet) => {
       console.log(pet);
       req.flash('success', 'Your pet just got a babysitter');
