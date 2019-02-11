@@ -30,7 +30,7 @@ router.post('/signup', (req, res, next) => {
           const hashPass = bcrypt.hashSync(password, salt);
           User.create({ username, password: hashPass, email })
             .then(() => {
-              res.redirect('/pets');
+              res.redirect('/');
             })
             .catch((error) => {
               next(error);
