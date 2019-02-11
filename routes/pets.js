@@ -17,7 +17,7 @@ router.post('/pets', (req, res, next) => {
   console.log(req.body);
   const ownerName = req.session.currentUser.username;
   const ownerId = req.session.currentUser._id;
-  const isPending = false;
+  const isPending = null;
   const isAdopted = false;
   const {
     name, description, startDay, endDay, image,
@@ -65,14 +65,14 @@ router.post('/:id', (req, res, next) => {
 router.post('/adopt/:id', (req, res, next) => {
   const { id } = req.params;
   const adopterId = req.session.currentUser._id;
-  Pet.findByIdAndUpdate(id, { adopter: adopterId })
-
+  Pet.findByIdAndUpdate(id, { adopter: adopterId, isPending: true })
     .then(() => {
+      console.log();
       res.redirect('/users');
     });
 });
 
-router.get('/users', (req, res, next) => { // this shows form to user
+router.get('/users', (req, res, next) => {
   res.render('users');
 });
 module.exports = router;

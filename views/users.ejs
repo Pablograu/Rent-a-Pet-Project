@@ -7,5 +7,10 @@
 <ul>
 <% for(var i=0; i < pets.length; i++) { %>
   <li><%= pets[i].name %></li>
+  <%if(pets[i].isPending){%>
+  <form action="/users/<%=pets[i].id%>/confirm" method="post">
+  <button type="submit" class="confirmBtn">Confirm</button>
+  </form>
+    <% } %>
 <% } %>
 </ul>

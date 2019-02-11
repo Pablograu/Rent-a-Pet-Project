@@ -12,7 +12,11 @@ const petSchema = new Schema({
   endDay: String,
   image: String,
   isAdopted: Boolean,
-  isPending: Boolean,
+  isPending: {
+    type: Boolean,
+    default: null,
+  },
+  candidate: { type: ObjectId, ref: 'User' },
   adopter: { type: ObjectId, ref: 'User' },
   review: [],
 

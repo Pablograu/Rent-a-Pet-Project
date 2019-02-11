@@ -9,7 +9,14 @@
 <%if(pet.adopter === undefined){%>
 <div>
     <li><%= pet.name %> <a href="/pets/<%=pet._id%>">More info</a></li>
+    <%if(pet.isPending === null){%>
+    <%console.log(typeof pet.ownerId, typeof currentUser._id)%>
+        <form action="/pets/adopt/<%=pets.id%>" method="post">
+        <button type="submit" class="confirmBtn">Confirm</button>
+        </form>
+    <% } %>
 </div>
 <% }%>
   <% }) %>
   </ul>
+  
