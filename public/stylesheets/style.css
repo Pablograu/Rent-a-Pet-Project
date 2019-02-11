@@ -36,3 +36,24 @@ header a{
   padding: 0.5rem;
   background-color: #2081C3;
 }
+
+.paw-img {
+  display: block;
+  margin: 18% auto 5% auto;
+  width: 20%;
+}
+
+.app-title {
+  display: block;
+  margin: 0 auto 7% auto;
+  width: 50%;
+  text-align: center;
+}
+
+.login-container {
+  display: block;
+  border-style: solid;
+  margin: 5% 12% 20% 12%;
+  min-height: 80%;
+  padding: 1rem;
+}
