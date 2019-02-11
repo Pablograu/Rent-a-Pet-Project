@@ -6,11 +6,9 @@
 <h1><%= title %></h1>
 <ul>
 <% pets.forEach((pet) => { %>
-<%if(pet.adopter === undefined){%>
+<%if(pet.pending === true || pet.isPending === null){%>
 <div>
     <li><%= pet.name %> <a href="/pets/<%=pet._id%>">More info</a></li>
-    <%if(pet.isPending === null){%>
-    <% } %>
 </div>
 <% }%>
   <% }) %>

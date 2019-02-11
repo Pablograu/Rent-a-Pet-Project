@@ -12,7 +12,7 @@
         <form action="/pets/adopt/<%=pet.id%>" method="post">
         <button type="submit" class="confirmBtn">Confirm</button>
         </form>
-    <% } else if (pet.isPending === true) {%>
+    <% } else if (pet.isPending === true && pet.ownerName !== currentUser.username) {%>
     <button type="button" class="btn btn-warning">Pending</button>
     <%}%>
     
