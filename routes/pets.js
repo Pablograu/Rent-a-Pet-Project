@@ -64,8 +64,9 @@ router.post('/:id', (req, res, next) => {
 
 router.post('/adopt/:id', (req, res, next) => {
   const { id } = req.params;
-  const adopterId = req.session.currentUser._id;
-  Pet.findByIdAndUpdate(id, { adopter: adopterId, isPending: true })
+  const adopter = req.session.currentUser._id;
+  const adopterName = req.session.currentUser.username;
+  Pet.findByIdAndUpdate(id, { adopterName, adopter, isPending: true })
     .then(() => {
       console.log();
       res.redirect('/users');

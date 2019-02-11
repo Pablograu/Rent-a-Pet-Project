@@ -14,18 +14,17 @@ router.get('/', (req, res, next) => {
 
 router.post('/:id/confirm', (req, res, next) => {
   const { id } = req.params;
-  const adopterId = req.session.currentUser._id;
-  Pet.findByIdAndUpdate(id, { adopter: adopterId, isPending: false })
+  Pet.findByIdAndUpdate(id, { isPending: false })
     .then((pet) => {
       console.log(pet);
-      req.flash('success', 'User accepted');
       res.redirect('/users');
     });
 });
 
 router.post('/:id/decline', (req, res, next) => {
   const { id } = req.params;
-  Pet.findByIdAndUpdate(id, { isPending: null })
+
+  Pet.findByIdAndUpdate(id, { isPending: null, adopter: null })
     .then((pet) => {
       console.log(pet);
       req.flash('warning', 'User declined');

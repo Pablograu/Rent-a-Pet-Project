@@ -6,7 +6,7 @@
 
 <ul>
 <% for(var i=0; i < pets.length; i++) { %>
-  <li>Some user wants to take care of <%= pets[i].name %> from <%=pets[i].startDay%>  untill <%=pets[i].endDay%> </li>
+  <li><%= pets[i].adopterName %> wants to take care of <%= pets[i].name %> from <%=pets[i].startDay%>  untill <%=pets[i].endDay%> </li>
   <%if(pets[i].isPending){%>
   <form action="/users/<%=pets[i].id%>/confirm" method="post">
   <button type="submit" class="confirmBtn">Confirm</button>
