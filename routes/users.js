@@ -18,6 +18,17 @@ router.post('/:id/confirm', (req, res, next) => {
   Pet.findByIdAndUpdate(id, { adopter: adopterId, isPending: false })
     .then((pet) => {
       console.log(pet);
+      req.flash('success', 'User accepted');
+      res.redirect('/users');
+    });
+});
+
+router.post('/:id/decline', (req, res, next) => {
+  const { id } = req.params;
+  Pet.findByIdAndUpdate(id, { isPending: null })
+    .then((pet) => {
+      console.log(pet);
+      req.flash('warning', 'User declined');
       res.redirect('/users');
     });
 });
