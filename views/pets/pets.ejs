@@ -9,7 +9,10 @@
 <%if(pet.adopter === undefined){%>
 <div>
     <li><%= pet.name %> <a href="/pets/<%=pet._id%>">More info</a></li>
+    <%if(pet.isPending === null){%>
+    <% } %>
 </div>
 <% }%>
   <% }) %>
   </ul>
+  

@@ -9,7 +9,13 @@ a {
 header{
   background-color: #2081C3;
   width: 100%;
+  
 }
+
+.navBtn a{
+  color: white;
+}
+
 .navbar{
   display: flex;
   justify-content: space-between;
