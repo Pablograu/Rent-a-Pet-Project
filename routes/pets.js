@@ -15,17 +15,21 @@ router.get('/', (req, res, next) => {
 
 router.post('/pets', (req, res, next) => {
   console.log(req.body);
+  const ownerName = req.session.currentUser.username;
+  const ownerId = req.session.currentUser._id;
+  const isPending = false;
+  const isAdopted = false;
   const {
-    name, description, date, days, image,
-  } = req.body; // this creates 3 vars from
+    name, description, startDay, endDay, image,
+  } = req.body; // this creates few vars at once
 
   Pet.create({
-    name, description, date, days, image,
+    name, description, ownerName, ownerId, startDay, endDay, image, isPending, isAdopted,
   })
     .then(() => {
-      console.log('added pet!');
       req.flash('success', 'Pet added!');
       res.redirect('/pets');
+      console.log('pet added succesfully');
     })
     .catch((error) => {
       console.log(error);
@@ -68,4 +72,7 @@ router.post('/adopt/:id', (req, res, next) => {
     });
 });
 
+router.get('/users', (req, res, next) => { // this shows form to user
+  res.render('users');
+});
 module.exports = router;
