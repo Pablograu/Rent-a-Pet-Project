@@ -6,8 +6,8 @@
   <p>Name: <%=pet.name%></p>
   <p>Owner: <%=pet.ownerName%></p>
   <p>About: <%=pet.description%></p>
-  <p>Available from: <%=pet.date%></p>
-  <p>Days: <%=pet.days%></p>
+  <p>Available from: <%=pet.startDay%></p>
+  <p>Available until: <%=pet.endDay%></p>
   <form action="/pets/adopt/<%=pet.id%>" method="post">
   <button type="submit" class="btn btn-primary">Confirm</button>
   </form>

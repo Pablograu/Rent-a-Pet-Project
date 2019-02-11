@@ -8,9 +8,9 @@ const petSchema = new Schema({
   description: String,
   ownerName: String,
   ownerId: { type: ObjectId, ref: 'User' }, // duda
-  date: String,
+  startDay: String,
+  endDay: String,
   image: String,
-  days: Number,
   adopter: { type: ObjectId, ref: 'User' },
   review: [],
 
