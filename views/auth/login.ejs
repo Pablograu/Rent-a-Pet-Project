@@ -1,20 +1,27 @@
 <form action="/auth/login" method="POST" id="form">
+
+
   <div class="outer-container">
-    <img class="paw-img" src="/images/cropped-favicon.png" alt="logo">
-    <h2 class="app-title">pick-a-pet</h2>
-    <div class="login-container">
-      <h4>Login</h4>
-      <label for="username">Username</label>
-      <input type="text" name="username" placeholder="obiwan">
-      <label for="password">Password</label>
-      <input type="password" name="password" placeholder="thatsnomoon">
-      <% if (errorMessage) { %>
-        <div class="error-message"><%= errorMessage %></div>
-      <% } %>
-      <button>Sign in</button>
-      <p class="account-message">
-          Don't have an account? <a href="/auth/signup">Sign up</a>
-      </p>
+      <h1 class="app-title">Petify</h1>
+      <img class="paw-img" src="/images/cropped-favicon.png" alt="logo">
     </div>
+
+      <h2 class="h2login">Login</h2>
+
+      <div class="login-container">
+        <label for="username">Username</label>
+        <input class="form-control" name="username" type="text" placeholder="Medium input">
+        <label for="password">Password</label>
+        <input class="form-control" name="password" type="password" placeholder="Medium input">
+        <% if (errorMessage) { %>
+          <div class="error-message"><%= errorMessage %></div>
+        <% } %>
+      </div>
+      <div class="btnContainer">
+      <button id="signupBtn" type="submit" class="btn btn-primary">Login</button>
+      </div>
+      <div class="signin-container">
+        <p class="account-message">Don't have an account? <a href="/auth/signup">Sign up</a></p>
+      </div>
   </div>  
 </form>
