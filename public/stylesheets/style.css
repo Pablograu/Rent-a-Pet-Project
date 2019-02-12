@@ -1,5 +1,5 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a {
@@ -42,15 +42,15 @@ header a{
   background-color: #2081C3;
 }
 
-.paw-img {
+.logo-img {
   display: block;
   margin: 0 auto;
-  width: 20%;
+  width: 200px;
 }
 
 .app-title {
   display: block;
-  margin: 0 auto 7% auto;
+  margin: 0 auto;
   width: 50%;
   text-align: center;
   font-family: 'Delius Unicase';
@@ -58,21 +58,24 @@ header a{
 
 .login-container {
   display: block;
-  margin: 5% 12% 10% 12%;
+  margin: 1% 12% 5% 12%;
   min-height: 80%;
   padding: 1rem;
 }
 
-<<<<<<< HEAD
-.h2login{
-  margin-left: 40px;
+.h3login{
+  text-align: center;
 }
 
+
 #signupBtn{
-    width: 200px;
-    border-radius: 40px;
-    height: 40px;
-    margin: 0 auto;
+  width: 250px;
+  border-radius: 40px;
+  height: 50px;
+  margin: 0 auto;
+  -webkit-box-shadow: 0px 32px 19px -14px rgba(0,0,0,0.47);
+  -moz-box-shadow: 0px 32px 19px -14px rgba(0,0,0,0.47);
+  box-shadow: 0px 32px 19px -14px rgba(0,0,0,0.47);
 }
 .outer-container{
   margin-top: 70px;
@@ -80,7 +83,6 @@ header a{
 .btnContainer{
   display: flex;
 }
-=======
 .navbar-pets {
   display: flex;
   justify-content: space-between;
@@ -120,5 +122,7 @@ header a{
   display: block;
 
 }
-
->>>>>>> c0b8a8d01b0f19d43a37f9fb5984cb2dd84e9133
+.account-message{
+  text-align: center;
+  margin-top: 30px;
+}
