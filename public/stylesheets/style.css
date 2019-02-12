@@ -63,6 +63,7 @@ header a{
   padding: 1rem;
 }
 
+<<<<<<< HEAD
 .h2login{
   margin-left: 40px;
 }
@@ -79,3 +80,45 @@ header a{
 .btnContainer{
   display: flex;
 }
+=======
+.navbar-pets {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#closebtn span {
+  margin-top:5px;
+  background-color:#fff;
+  width:25px;
+  height:3px;
+  display:block;
+  position:relative;
+  opacity:1.0;
+  border-radius:15%;
+  transition: all .3s;
+}
+#menulist {
+  height: 0;
+  width: 100%;
+  transition-duration: 2s;
+}
+
+#menulist:ul li {
+  display: none;
+}
+#menulist li {
+  display: none;
+}
+
+#menulist.show-menu {
+  height: 100vh;
+  background: green;
+  transition-duration: 2s;
+}
+#menulist.show-menu li{
+  display: block;
+
+}
+
+>>>>>>> c0b8a8d01b0f19d43a37f9fb5984cb2dd84e9133
