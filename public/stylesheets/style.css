@@ -66,7 +66,34 @@ header a{
 .navbar-pets {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   align-items: center;
+  
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 0px;
+  background-color: #2081C3;
+  color: white;
+}
+
+.navbar-item {
+  flex-grow: 1;
+  flex-basis: 50%;
+}
+
+.navbar-item > a {
+  color: white;
+}
+
+.right {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 #closebtn span {
@@ -83,7 +110,8 @@ header a{
 #menulist {
   height: 0;
   width: 100%;
-  transition-duration: 2s;
+  transition-duration: 0.3s;
+
 }
 
 #menulist:ul li {
@@ -94,12 +122,22 @@ header a{
 }
 
 #menulist.show-menu {
-  height: 100vh;
+  height: 25vh;
   background: green;
-  transition-duration: 2s;
+  transition-duration: .3s;
+  position: relative;
+  display: block;
+  float: right;
 }
+
 #menulist.show-menu li{
   display: block;
-
 }
+
+#menulist li {
+  padding: 20px 0;
+  text-align: center;
+}
+
+
 

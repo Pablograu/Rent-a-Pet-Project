@@ -16,4 +16,5 @@ function navToggle() {
     menuDropped.classList.add('show-menu');
   }
 }
+
 navButton.addEventListener('click', navToggle());
