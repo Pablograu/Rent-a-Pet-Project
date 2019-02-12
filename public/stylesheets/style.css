@@ -63,3 +63,44 @@ header a{
   min-height: 80%;
   padding: 1rem;
 }
+
+.navbar-pets {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#closebtn span {
+  margin-top:5px;
+  background-color:#fff;
+  width:25px;
+  height:3px;
+  display:block;
+  position:relative;
+  opacity:1.0;
+  border-radius:15%;
+  transition: all .3s;
+}
+#menulist {
+  height: 0;
+  width: 100%;
+  transition-duration: 2s;
+}
+
+#menulist:ul li {
+  display: none;
+}
+#menulist li {
+  display: none;
+}
+
+#menulist.show-menu {
+  height: 100vh;
+  background: green;
+  transition-duration: 2s;
+}
+#menulist.show-menu li{
+  display: block;
+
+}
+
