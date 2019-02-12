@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
+// const sass = require('sass');
 const notifications = require('./middlewares/notifications');
 const protectedRoute = require('./middlewares/protectedRoute');
 //  Change the title of database
@@ -26,6 +27,7 @@ const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const petRouter = require('./routes/pets');
 
+// const result = sass.renderSync({ file: scss_filename });
 const app = express();
 
 app.use(session({
