@@ -69,7 +69,7 @@ router.post('/adopt/:id', (req, res, next) => {
   Pet.findByIdAndUpdate(id, { adopterName, adopter, isPending: true })
     .then(() => {
       console.log();
-      res.redirect('/users');
+      res.redirect(`/pets/${id}`);
     });
 });
 

@@ -4,17 +4,27 @@
   <button>Log out</button>
 </form>
 
-<ul>
-<% for(var i=0; i < pets.length; i++) { %>
-  <li><%= pets[i].adopterName %> wants to take care of <%= pets[i].name %> from <%=pets[i].startDay%>  untill <%=pets[i].endDay%> </li>
-  <%if(pets[i].isPending){%>
-  <form action="/users/<%=pets[i].id%>/confirm" method="post">
-  <button type="submit" class="confirmBtn">Confirm</button>
-  </form>
-  <form action="/users/<%=pets[i].id%>/decline" method="post">
-  <button type="submit" class="declineBtn">decline</button>
-  </form>
-    <% } %>
-  
-<% } %>
-</ul>
+
+<%pets.forEach((pet) => {%>
+<%if(pet.isPending && pet.ownerName === currentUser.username){%>
+<p><%=pet.adopterName%> wants to take care of <%=pet.name%> from <%=pet.startDay%>  untill <%=pet.endDay%></p>
+<div>
+    <form action="/users/<%=pet.id%>/confirm" method="Post">
+      <button type="submit" class="confirmBtn">Confirm</button>
+    </form>
+
+    <form action="/users/<%=pet.id%>/decline" method="Post">
+      <button type="submit">Decline</button>
+    </form>
+<%}%>
+</div>
+  <%})%>
+
+<p>Next petsittings: </p>
+  <%pets.forEach((pet) => {%>
+  <%if(pet.isAdopted === true && pet.adopterName === currentUser.username){%>
+<div>
+  <p>Soon you'll be taking care of <%=pet.name%></p>
+<%}%>
+</div>
+<%})%>

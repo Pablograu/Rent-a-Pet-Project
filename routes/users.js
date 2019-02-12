@@ -5,18 +5,25 @@ const router = express.Router();
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
-  Pet.find({ ownerId: req.session.currentUser._id, isPending: true })
+//   Pet.find({ ownerId: req.session.currentUser._id, isAdopted: true })
+//     .then((pets) => {
+//       res.render('users', { pets });
+//     });
+// });
+
+  Pet.find({ $or: [{ ownerId: req.session.currentUser._id, isPending: true }, { adopter: req.session.currentUser._id, isAdopted: true }] })
     .then((pets) => {
       res.render('users', { pets });
     });
-  // res.send('respond with a resource');
 });
+
 
 router.post('/:id/confirm', (req, res, next) => {
   const { id } = req.params;
-  Pet.findByIdAndUpdate(id, { isPending: false })
+  Pet.findByIdAndUpdate(id, { isPending: false, isAdopted: true })
     .then((pet) => {
       console.log(pet);
+      req.flash('success', 'Your pet just got a babysitter');
       res.redirect('/users');
     });
 });
@@ -24,7 +31,7 @@ router.post('/:id/confirm', (req, res, next) => {
 router.post('/:id/decline', (req, res, next) => {
   const { id } = req.params;
 
-  Pet.findByIdAndUpdate(id, { isPending: null, adopter: null })
+  Pet.findByIdAndUpdate(id, { isPending: null, adopter: null, adopterName: null })
     .then((pet) => {
       console.log(pet);
       req.flash('warning', 'User declined');
