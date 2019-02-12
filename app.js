@@ -1,3 +1,4 @@
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -10,10 +11,9 @@ const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 const notifications = require('./middlewares/notifications');
 const protectedRoute = require('./middlewares/protectedRoute');
-// const bootstrap = require('bootstrap')
 //  Change the title of database
 mongoose
-  .connect('mongodb://localhost/rentapet', { useNewUrlParser: true })
+  .connect(process.env.DB_URL, { useNewUrlParser: true })
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })
@@ -33,7 +33,7 @@ app.use(session({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60, // 1 day
   }),
-  secret: 'some-string',
+  secret: process.env.SECRET,
   resave: true,
   saveUninitialized: true,
   cookie: {
