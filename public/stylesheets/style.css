@@ -120,6 +120,7 @@ body {
   margin: 0px;
   background-color: #2081C3;
   color: white;
+  top: 0;
 }
 
 .navbar-item {
@@ -197,17 +198,17 @@ body {
    margin: 2rem auto;
  }
 
-.container-fluid {
-  display: block;
+.pet-info {
+  display: flex;
+  flex-direction: column;
   border-style: none;
   border-radius: 2rem;
   max-width: 80%;
-  min-height: 200px;
+  margin: 0 auto;
+  min-height: 60vh;
   box-shadow: 5px 10px #888888;
-}
+  padding: 2rem 1rem;
 
-.container-fluid > * {
-  
 }
 
 .listli{
@@ -242,4 +243,24 @@ body {
 
 #infoBtn a{
   color: #1a1b1c;
+}
+
+.name-pic-container{
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.prof-pic {
+  margin: 0;
+  text-align: center;
+  width: 40%;
+}
+
+.prof-name h2 {
+  font-size: 2rem;
+  text-align: left;
+  margin: 3rem;
+  padding-top: 4rem;
 }

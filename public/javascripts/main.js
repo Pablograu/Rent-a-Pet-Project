@@ -1,20 +1,13 @@
 
-function test() {
-  console.log('linked');
-}
-test();
+function main() {
+  const menuDropped = document.getElementById('menulist');
+  const navButton = document.getElementById('closebtn');
 
-const menuDropped = document.querySelector('#menulist');
-const navButton = document.querySelector('#closebtn');
-
-function navToggle() {
-  console.log('click');
-
-  if (menuDropped.classList.value === 'show-menu') {
-    menuDropped.classList.remove('show-menu');
-  } else {
-    menuDropped.classList.add('show-menu');
+  function navToggle() {
+    menuDropped.classList.toggle('show-menu');
   }
+
+  navButton.addEventListener('click', navToggle);
 }
 
-navButton.addEventListener('click', navToggle());
+window.addEventListener('load', main);

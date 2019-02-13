@@ -1,30 +1,40 @@
-<h2><%=currentUser.username%> profile</h2>
+<%- include('../views/partials/header.ejs'); %>
 
-<form action="/auth/logout" method="GET" id="form">
-  <button>Log out</button>
-</form>
-
-
-<%pets.forEach((pet) => {%>
-<%if(pet.isPending && pet.ownerName === currentUser.username){%>
-<p><%=pet.adopterName%> wants to take care of <%=pet.name%> from <%=pet.startDay%>  untill <%=pet.endDay%></p>
-<div>
-    <form action="/users/<%=pet.id%>/confirm" method="Post">
-      <button type="submit" class="confirmBtn">Confirm</button>
-    </form>
-
-    <form action="/users/<%=pet.id%>/decline" method="Post">
-      <button type="submit">Decline</button>
-    </form>
-<%}%>
+<div class="name-pic-container">
+  <div class="prof-pic">
+    <img src="images/fox.png" alt="img">;
+  </div>
+  <div class="prof-name">
+    <h2><%=currentUser.username%>'s profile</h2>
+  </div> 
 </div>
-  <%})%>
 
-<p>Next petsittings: </p>
+<div>
   <%pets.forEach((pet) => {%>
-  <%if(pet.isAdopted === true && pet.adopterName === currentUser.username){%>
-<div>
-  <p>Soon you'll be taking care of <%=pet.name%></p>
-<%}%>
+  <%if(pet.isPending && pet.ownerName === currentUser.username){%>
+  <p><%=pet.adopterName%> wants to take care of <%=pet.name%> from <%=pet.startDay%>  untill <%=pet.endDay%></p>
+  <div>
+      <form action="/users/<%=pet.id%>/confirm" method="Post">
+        <button type="submit" class="confirmBtn">Confirm</button>
+      </form>
+
+      <form action="/users/<%=pet.id%>/decline" method="Post">
+        <button type="submit">Decline</button>
+      </form>
+  <%}%>
+  </div>
+    <%})%>
+
+  <p>Next petsittings: </p>
+    <%pets.forEach((pet) => {%>
+    <%if(pet.isAdopted === true && pet.adopterName === currentUser.username){%>
+  <div>
+    <p>Soon you'll be taking care of <%=pet.name%></p>
+  <%}%>
+  </div>
+  <%})%>
 </div>
-<%})%>
+
+<%# <form action="/auth/logout" method="GET" id="form">
+  <button>Log out</button>
+</form> %>

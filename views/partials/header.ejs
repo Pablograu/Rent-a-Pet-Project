@@ -5,7 +5,7 @@
                 <a href="/">Back</a>
             </div>
             <div class="navbar-item right">
-                <span id="closebtn" onclick="navToggle()">
+                <span id="closebtn">
                     <span class="line1"></span>
                     <span class="line2"></span>
                     <span class="line3"></span>
@@ -15,7 +15,11 @@
         <ul id="menulist">
           <li><a class="menuitems" href="/users">My Profile</a></li>		
           <li><a class="menuitems" href="#">Settings</a></li>				
-          <li><a class="menuitems" href="#">Logout</a></li>
+          <li>
+          <form action="/auth/logout" method="GET" id="form">
+          <button type="submit">log out</button> 
+</form>
+          </li>
         </ul>
     </div>
             
