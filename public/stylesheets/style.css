@@ -66,6 +66,13 @@ body {
   min-height: 80%;
   padding: 1rem;
  }
+
+ .signup-container {
+  display: block;
+  margin: 1% 12% 5% 12%;
+  min-height: 80%;
+  padding: 1rem;
+ }
  
  .h3login{
   text-align: center;
