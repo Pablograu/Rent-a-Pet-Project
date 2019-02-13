@@ -73,10 +73,6 @@ router.post('/adopt/:id', (req, res, next) => {
     });
 });
 
-router.get('/users', (req, res, next) => {
-  res.render('users');
-});
-
 router.get('/:id/edit', (req, res, next) => {
   const { id } = req.params;
   Pet.findById(id)
@@ -88,7 +84,7 @@ router.get('/:id/edit', (req, res, next) => {
     });
 });
 
-router.post('/pets/:id/edit', (req, res, next) => {
+router.post('/:id/edit', (req, res, next) => {
   const { id } = req.params;
   const {
     name, description, startDay, endDay, image,
@@ -97,7 +93,16 @@ router.post('/pets/:id/edit', (req, res, next) => {
     name, description, startDay, endDay, image,
   })
     .then(() => {
-      res.redirect('/pets');
+      res.redirect('/users');
+    })
+    .catch(next);
+});
+
+router.post('/:id/delete', (req, res, next) => {
+  const { id } = req.params;
+  Pet.findByIdAndDelete(id)
+    .then(() => {
+      res.redirect('/users');
     })
     .catch(next);
 });
