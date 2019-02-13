@@ -11,7 +11,11 @@ router.get('/', (req, res, next) => {
 //     });
 // });
 
-  Pet.find({ $or: [{ ownerId: req.session.currentUser._id, isPending: true }, { adopter: req.session.currentUser._id, isAdopted: true }] })
+  Pet.find({
+    $or: [{ ownerId: req.session.currentUser._id, isPending: true },
+      { adopter: req.session.currentUser._id, isAdopted: true },
+      { ownerId: req.session.currentUser._id, isPending: null }],
+  })
     .then((pets) => {
       res.render('users', { pets });
     });

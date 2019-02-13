@@ -18,9 +18,10 @@
     <div style="background-image: url('<%= pet.image %>')"></div>
       <p><%=pet.name%></p>
       <div class="aceptDecline">
-      <a href="/pets/<%=pet._id%>/edit"><button class="btn btn-warning profileBtns">Edit</button></a>
-        
-      <a href="/pets/<%=pet._id%>/delete"><button class="btn btn-danger profileBtns">Delete</button></a>
+        <a href="/pets/<%=pet._id%>/edit"><button class="btn btn-warning profileBtns">Edit</button></a>
+      <form action="/pets/<%=pet._id%>/delete" method="post">
+        <input type="submit" class="btn btn-danger profileBtns" value="Delete">
+      </form>
     <div></div>
   <%}%>
   </div>
