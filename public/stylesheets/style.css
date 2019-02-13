@@ -197,18 +197,10 @@ body {
   text-align: center;
 }
 
-<<<<<<< HEAD
- .details-container h2 {
-   font-size: 5vh;
-   margin: 2rem auto;
-   
-  }
-=======
 .details-container h2 {
  font-size: 5vh;
  margin: 2rem auto;
 }
->>>>>>> 3b548c76eaff0339a8c29c97af39b26d46da2b74
 
 .pet-info {
   display: flex;
