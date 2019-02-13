@@ -8,6 +8,7 @@ const pets = [
     startDay: '02/09/2019',
     endDay: '05/09/2019',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI_fDqR41AbhEZ1H1PuUzo4JILFrfG92HD29QaOkBXlaD8MGaVqA',
+    ownerName: 'Papito',
   },
   {
     name: 'Justino',
@@ -15,6 +16,7 @@ const pets = [
     startDay: '17/05/2019',
     endDay: '20/05/2019',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7URh6MPzXuBxho1jiGhYWmzDJ-ay-9wqWiklHbdjEoAxMCkJO',
+    ownerName: 'Papito',
   },
   {
     name: 'Weirdo',
@@ -22,6 +24,7 @@ const pets = [
     startDay: '12/05/2019',
     endDay: '18/05/2019',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCJGSQ9DmKI9_Wc9CuN114EU34GG7lqQgS_QFrxJfdVPHbHv-rOw',
+    ownerName: 'Papito',
   },
 ];
 

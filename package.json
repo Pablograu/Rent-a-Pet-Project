@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "seed": "node ./bin/seed.js",
+    "seed": "node ./bin/seed",
     "start": "node ./bin/www",
     "start-dev": "nodemon ./bin/www"
   },
