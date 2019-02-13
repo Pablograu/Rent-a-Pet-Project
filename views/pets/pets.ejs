@@ -10,7 +10,7 @@
 <% pets.forEach((pet) => { %>
 <%if(pet.pending === true || pet.isPending === null){%>
 <div class="card">
-    <div><img class="cardImage"src="<%= pet.image %>" alt="fluffy image"></div>
+     <div class="cardImage" style="background-image: url('<%= pet.image %>')"></div>
     <div>
         <li class="listli">My name is <a href="/pets/<%=pet._id%>"><%= pet.name %></a></li>
         <li class="listli">Start: <a href="/pets/<%=pet._id%>"><%= pet.startDay %></a></li>
