@@ -10,4 +10,11 @@ function main() {
   navButton.addEventListener('click', navToggle);
 }
 
+// const ex = document.querySelector('.touchAndHide');
+// const lis = document.querySelectorAll('.petsProfile');
+// ex.addEventListener('click', () => {
+//   console.log(lis);
+//   lis.classList.toggle('hideme');
+// });
+
 window.addEventListener('load', main);

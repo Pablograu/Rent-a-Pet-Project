@@ -3,8 +3,7 @@
 <div class="details-container">
   <h2>Details</h2>
   <div class="pet-info">
-    <div>
-      <img class="details-img" src="<%=pet.image%>" style="background-image: url('<%= pet.image %>')" alt="" width="">
+      <div class="details-img img-detail-container" style="background-image: url('<%= pet.image %>')"></div>
     </div>
     <div class="detailed-details">
       <p>Name: <%=pet.name%></p>
@@ -15,7 +14,7 @@
       <div class="div-btn">
         <%if(pet.isPending === null && pet.ownerName !== currentUser.username){%>
             <form action="/pets/adopt/<%=pet.id%>" method="post">
-            <button type="submit" class="confirmBtn">Confirm</button>
+            <button class="btn btn-primary confirmBtn">Confirm</button>
             </form>
         <% } else if (pet.isPending === true && pet.ownerName !== currentUser.username) {%>
         <button type="button" class="btn btn-warning">Pending</button>

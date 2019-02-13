@@ -7,7 +7,7 @@ body {
  }
  
  header{
-  background-color: #2081C3;
+  background-color: rgb(207, 132, 11);
   width: 100%;
   position: fixed;
   top: 0;
@@ -43,7 +43,7 @@ body {
   border-radius: 2px;
   color: white;
   padding: 0.5rem;
-  background-color: #2081C3;
+  background-color: rgb(207, 132, 11);
  }
  
  .logo-img {
@@ -77,6 +77,8 @@ body {
   border-radius: 40px;
   height: 50px;
   margin: 0 auto;
+  background-color: rgb(207, 132, 11);
+  border-style: none;
   -webkit-box-shadow: 0px 32px 19px -14px rgba(0,0,0,0.47);
   -moz-box-shadow: 0px 32px 19px -14px rgba(0,0,0,0.47);
   box-shadow: 0px 32px 19px -14px rgba(0,0,0,0.47);
@@ -112,6 +114,7 @@ body {
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
+  
   margin: 0;
 } */
 
@@ -121,7 +124,7 @@ body {
   justify-content: space-between;
   flex-direction: row;
   margin: 0px;
-  background-color: #2081C3;
+  background-color: rgb(207, 132, 11);
   color: white;
   top: 0;
 }
@@ -171,7 +174,7 @@ body {
 
 #menulist.show-menu {
   height: 30vh;
-  background: rgb(70, 107, 131);
+  background: rgb(39, 37, 33);
   transition-duration: .3s;
   position: relative;
   display: block;
@@ -206,24 +209,23 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  min-height: 60vh;
   padding: 2rem 1rem;
-  height: 80vh;
 }
-
 .details-img {
+  border-radius: 10px;
+  height: 36vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: center;
-  box-shadow: 4px 5px 17px 2px black;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
-
 .detailed-details {
-  margin-top: 8vh;
+  margin-top: 1rem;
 }
-
 .div-btn {
   padding-top: 1.5rem;
-}
+} 
 
 .listli{
   font-size: 18px;
@@ -245,7 +247,6 @@ body {
   max-height: 400px;
 
 }
-
 .cardImage{
   border-radius: 10px;
   height: 36vh;
@@ -268,11 +269,6 @@ body {
   color: #1a1b1c;
 }
 
-.addBtn{
-  position: fixed;
-  bottom: 5px;
-}
-
 .addBtn a{
   color: white;
 }
@@ -281,10 +277,19 @@ body {
   border-radius: 50%;
   height: 90px;
   width: 90px;
-  -webkit-box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 8px 22px -4px #9c6216e3;
   -moz-box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
   box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
   font-size: 18px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border-style: none;
+  background-color: rgb(192, 117, 18);
+  color: white;
+}
+#addBtn a{
+  color: white;
 }
 
 .name-pic-container{
@@ -315,3 +320,32 @@ body {
   width: 100px;
   color: white;
 }
+.createContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.createContainer input{
+  width: 100%;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgb(39, 37, 33);
+}
+#createBtn{
+  border-radius: 30px;
+  border-style: none;
+  background-color: rgb(97, 66, 10);
+  color: white;
+  font-size: 16px;
+  margin-top: 30px;
+  -webkit-box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  font-size: 18px;
+}
+
+/* .hideme{
+  display: none;
+} */
