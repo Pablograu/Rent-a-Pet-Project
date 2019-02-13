@@ -88,7 +88,6 @@ body {
   text-align: center;
 }
 
-
 #signupBtn{
   width: 250px;
   border-radius: 40px;
@@ -152,7 +151,6 @@ body {
   height: 0;
   width: 100%;
   transition-duration: 0.3s;
-
 }
 
 #menulist:ul li {
@@ -162,9 +160,13 @@ body {
   display: none;
 }
 
+#menulist li a {
+  color: white;
+}
+
 #menulist.show-menu {
   height: 25vh;
-  background: green;
+  background: rgb(70, 107, 131);
   transition-duration: .3s;
   position: relative;
   display: block;
@@ -185,5 +187,27 @@ body {
   margin-top: 30px;
  }
 
+ .details-container {
+   display: block;
+   text-align: center;
+ }
+
+ .details-container h2 {
+   font-size: 5vh;
+   margin: 2rem auto;
+ }
+
+.container-fluid {
+  display: block;
+  border-style: none;
+  border-radius: 2rem;
+  max-width: 80%;
+  min-height: 200px;
+  box-shadow: 5px 10px #888888;
+}
+
+.container-fluid > * {
+  
+}
 
 
