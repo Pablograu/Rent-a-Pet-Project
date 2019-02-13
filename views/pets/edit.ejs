@@ -1,0 +1,10 @@
+<h1>Edit information</h1>
+
+<form action="/users/<%=pet._id%>/edit" method="POST">
+  <input type="text"   name="name" value="<%=pet.name%>" placeholder="name">
+  <input type="date"   name ="startDay"value="<%=pet.startDay%>" placeholder="date">
+  <input type="date"   name ="endDay"value="<%=pet.endDay%>" placeholder="date">
+  <input type="text"   name="image" value="<%=pet.image%>">
+  <input type="text"   name="description" value="<%=pet.description%>" placeholder="description">
+  <input type="submit" value="submit">
+</form>

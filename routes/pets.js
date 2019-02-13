@@ -76,4 +76,30 @@ router.post('/adopt/:id', (req, res, next) => {
 router.get('/users', (req, res, next) => {
   res.render('users');
 });
+
+router.get('/:id/edit', (req, res, next) => {
+  const { id } = req.params;
+  Pet.findById(id)
+    .then((pet) => {
+      res.render('pets/edit', { pet });
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
+router.post('/pets/:id/edit', (req, res, next) => {
+  const { id } = req.params;
+  const {
+    name, description, startDay, endDay, image,
+  } = req.body;
+  Pet.findByIdAndUpdate(id, {
+    name, description, startDay, endDay, image,
+  })
+    .then(() => {
+      res.redirect('/pets');
+    })
+    .catch(next);
+});
+
 module.exports = router;

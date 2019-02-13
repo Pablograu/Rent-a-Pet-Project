@@ -1,10 +1,5 @@
-<div class="navbar-pets">
-    <ul>
-        <li><a href="/pets/create">Add pets</a></li>
-        <li><a href="/users">My Profile</a></li>
-    </ul>
-</div>
-<h1><%= title %></h1>
+
+<%- include('../partials/header'); %>
 
 <ul>
 <% pets.forEach((pet) => { %>
@@ -13,10 +8,15 @@
      <div class="cardImage" style="background-image: url('<%= pet.image %>')"></div>
     <div>
         <li class="listli">My name is <a href="/pets/<%=pet._id%>"><%= pet.name %></a></li>
-        <li class="listli">Start: <a href="/pets/<%=pet._id%>"><%= pet.startDay %></a></li>
+        <li class="listli">From: <a href="/pets/<%=pet._id%>"><%= pet.startDay %></a></li>
+        <li class="listli">Till: <a href="/pets/<%=pet._id%>"><%= pet.startDay %></a></li>
     </div>
     <button id="infoBtn" type="button" class="btn btn-secondary" ><a href="/pets/<%=pet._id%>">More info</a></button>
 </div>
 <% }%>
 <% }) %>
 </ul>
+
+<div class="addBtn">
+    <button type="button" class="btn btn-success" id="addBtn"><a href="/pets/create">Add pet!</a></button>
+</div>
