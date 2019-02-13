@@ -16,10 +16,11 @@
     <%if(pet.ownerName === currentUser.username){%>
   <div class="petsProfile">
     <div style="background-image: url('<%= pet.image %>')"></div>
-    <p><%=pet.name%></p>
-    <div class="aceptDecline">
-      <button type="button" class="btn btn-warning profileBtns">Edit</button>
-      <button type="submit"class="btn btn-danger profileBtns">Delete</button>
+      <p><%=pet.name%></p>
+      <div class="aceptDecline">
+      <a href="/pets/<%=pet._id%>/edit"><button class="btn btn-warning profileBtns">Edit</button></a>
+        
+      <a href="/pets/<%=pet._id%>/delete"><button class="btn btn-danger profileBtns">Delete</button></a>
     <div></div>
   <%}%>
   </div>
