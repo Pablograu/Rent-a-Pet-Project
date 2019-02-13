@@ -3,20 +3,24 @@
 <div class="details-container">
   <h2>Details</h2>
   <div class="pet-info">
-    <img src="<%=pet.image%>" alt="" width="150px">
-    <p>Name: <%=pet.name%></p>
-    <p>Owner: <%=pet.ownerName%></p>
-    <p>Good to know: <%=pet.description%></p>
-    <p>Available from: <%=pet.startDay%></p>
-    <p>Available until: <%=pet.endDay%></p>
-    <div class="div-btn">
-      <%if(pet.isPending === null && pet.ownerName !== currentUser.username){%>
-          <form action="/pets/adopt/<%=pet.id%>" method="post">
-          <button type="submit" class="confirmBtn">Confirm</button>
-          </form>
-      <% } else if (pet.isPending === true && pet.ownerName !== currentUser.username) {%>
-      <button type="button" class="btn btn-warning">Pending</button>
-      <%}%>
+    <div>
+      <img class="details-img" src="<%=pet.image%>" style="background-image: url('<%= pet.image %>')" alt="" width="">
+    </div>
+    <div class="detailed-details">
+      <p>Name: <%=pet.name%></p>
+      <p>Owner: <%=pet.ownerName%></p>
+      <p>Good to know: <%=pet.description%></p>
+      <p>Available from: <%=pet.startDay%></p>
+      <p>Available until: <%=pet.endDay%></p>
+      <div class="div-btn">
+        <%if(pet.isPending === null && pet.ownerName !== currentUser.username){%>
+            <form action="/pets/adopt/<%=pet.id%>" method="post">
+            <button type="submit" class="confirmBtn">Confirm</button>
+            </form>
+        <% } else if (pet.isPending === true && pet.ownerName !== currentUser.username) {%>
+        <button type="button" class="btn btn-warning">Pending</button>
+        <%}%>
+      </div>
     </div>
   </div>
 
