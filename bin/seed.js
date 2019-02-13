@@ -28,7 +28,7 @@ const pets = [
 mongoose.connect(process.env.DB_URL, { useNewUrlParser: true })
   .then(() => {
     console.log('connected to db');
-    return Product.create(products);
+    return Pet.create(pets);
   }).then((data) => {
     console.log('created data', data);
   }).then(() => {
