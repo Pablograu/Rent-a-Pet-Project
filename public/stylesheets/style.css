@@ -9,6 +9,9 @@ body {
  header{
   background-color: #2081C3;
   width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
  }
  
  .navBtn a{
@@ -33,6 +36,7 @@ body {
  header a{
   color: #1a1b1c;
   text-decoration: none;
+  font-size: 18px;
  }
  
  .confirmBtn {
@@ -103,14 +107,14 @@ body {
 .btnContainer{
   display: flex;
 }
-.navbar-pets {
+/* .navbar-pets {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
   
   margin: 0;
-}
+} */
 
 .navbar {
   display: flex;
@@ -149,6 +153,7 @@ body {
 }
 #menulist {
   height: 0;
+  z-index: 1;
   width: 100%;
   transition-duration: 0.3s;
 }
@@ -165,7 +170,7 @@ body {
 }
 
 #menulist.show-menu {
-  height: 25vh;
+  height: 30vh;
   background: rgb(70, 107, 131);
   transition-duration: .3s;
   position: relative;
@@ -185,17 +190,17 @@ body {
 .account-message{
   text-align: center;
   margin-top: 30px;
- }
+}
 
- .details-container {
-   display: block;
-   text-align: center;
- }
+.details-container {
+  display: block;
+  text-align: center;
+}
 
- .details-container h2 {
-   font-size: 5vh;
-   margin: 2rem auto;
- }
+.details-container h2 {
+ font-size: 5vh;
+ margin: 2rem auto;
+}
 
 .container-fluid {
   display: block;
@@ -214,17 +219,20 @@ body {
   font-size: 18px;
   padding: 5px;
 }
-
+.card:first-of-type{
+  margin-top: 80px;
+}
 .card{
   margin: 10px;
   padding: 5px;
   text-align: center;
   border-radius: 10px;
   -webkit-box-shadow: 0px 8px 29px -5px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 8px 29px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 8px 29px -5px rgba(80, 42, 42, 0.75);
   box-shadow: 0px 8px 29px -5px rgba(0,0,0,0.75);
+  height: 400px;
   min-height: 370px;
-  max-height: 370px;
+  max-height: 400px;
 
 }
 .cardImage{
@@ -248,3 +256,23 @@ body {
 #infoBtn a{
   color: #1a1b1c;
 }
+
+.addBtn{
+  position: fixed;
+  bottom: 5px;
+}
+
+.addBtn a{
+  color: white;
+}
+
+#addBtn{
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  -webkit-box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  font-size: 18px;
+}
+
