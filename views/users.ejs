@@ -5,7 +5,16 @@
   <button>Log out</button>
 </form>
 
+<p>My pets</p>
+  <%pets.forEach((pet) => {%>
+  <%if(pet.adopterName === currentUser.username){%>
+<div>
+  <p><%=pet.name%></p>
+<%}%>
+</div>
+<%})%>
 
+<h2>Requests:</h2>
 <%pets.forEach((pet) => {%>
 <%if(pet.isPending && pet.ownerName === currentUser.username){%>
 <p><%=pet.adopterName%> wants to take care of <%=pet.name%> from <%=pet.startDay%>  untill <%=pet.endDay%></p>
