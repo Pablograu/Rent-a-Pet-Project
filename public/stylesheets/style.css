@@ -278,7 +278,7 @@ body {
 }
 
 .name-pic-container{
-  margin: 0;
+  margin-top: 90px;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -295,4 +295,12 @@ body {
   text-align: left;
   margin: 3rem;
   padding-top: 4rem;
+}
+
+.aceptDecline{
+  display: flex;
+
+}
+.btn.profileBtns{
+  width: 100px;
 }

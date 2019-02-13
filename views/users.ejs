@@ -2,32 +2,54 @@
 
 <div class="name-pic-container">
   <div class="prof-pic">
-    <img src="images/fox.png" alt="img">;
+    <img src="images/fox.png" alt="img">
   </div>
   <div class="prof-name">
     <h2><%=currentUser.username%>'s profile</h2>
   </div> 
 </div>
 
+
 <div>
+<h3>My Pets</h3>
+    <%pets.forEach((pet) => {%>
+    <%if(pet.ownerName === currentUser.username){%>
+  <div class="petsProfile">
+    <div style="background-image: url('<%= pet.image %>')"></div>
+    <p><%=pet.name%></p>
+    <div class="aceptDecline">
+      <button type="button" class="btn btn-warning profileBtns">Edit</button>
+      <button type="submit"class="btn btn-danger profileBtns">Delete</button>
+    <div></div>
+  <%}%>
+  </div>
+  <%})%>
+</div>
+
+<div>
+<h3>Requests</h3>
   <%pets.forEach((pet) => {%>
   <%if(pet.isPending && pet.ownerName === currentUser.username){%>
-  <p><%=pet.adopterName%> wants to take care of <%=pet.name%> from <%=pet.startDay%>  untill <%=pet.endDay%></p>
   <div>
+  <p><%=pet.adopterName%> wants to take care of <%=pet.name%> from <%=pet.startDay%>  untill <%=pet.endDay%></p>
+      <div class="aceptDecline">
       <form action="/users/<%=pet.id%>/confirm" method="Post">
-        <button type="submit" class="confirmBtn">Confirm</button>
+        <button type="submit" class="btn btn-primary profileBtns">Confirm</button>
       </form>
 
       <form action="/users/<%=pet.id%>/decline" method="Post">
-        <button type="submit">Decline</button>
+        <button type="submit"class="btn btn-danger profileBtns">Decline</button>
       </form>
+      </div>
   <%}%>
   </div>
     <%})%>
+</div>
 
-  <p>Next petsittings: </p>
+<div>
     <%pets.forEach((pet) => {%>
     <%if(pet.isAdopted === true && pet.adopterName === currentUser.username){%>
+    <h3>Next petsittings: </h3>
   <div>
     <p>Soon you'll be taking care of <%=pet.name%></p>
   <%}%>
