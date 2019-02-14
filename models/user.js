@@ -7,6 +7,7 @@ const userSchema = new Schema({
   username: { type: String, unique: true },
   password: { type: String, required: true },
   email: { type: String, unique: true },
+  image: String,
   isOwner: Boolean,
   pet: ObjectId, // duda
   review: [],

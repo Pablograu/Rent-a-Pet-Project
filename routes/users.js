@@ -1,16 +1,11 @@
 const express = require('express');
 const Pet = require('../models/pet');
+const User = require('../models/user');
 
 const router = express.Router();
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
-//   Pet.find({ ownerId: req.session.currentUser._id, isAdopted: true })
-//     .then((pets) => {
-//       res.render('users', { pets });
-//     });
-// });
-
   Pet.find({
     $or: [{ ownerId: req.session.currentUser._id, isPending: true },
       { adopter: req.session.currentUser._id, isAdopted: true },
@@ -21,6 +16,30 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.get('/:id/edit', (req, res, next) => {
+  const { id } = req.params;
+  User.findById(id)
+    .then((user) => {
+      res.render('userEdit', { user });
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
+router.post('/:id/edit', (req, res, next) => {
+  const { id } = req.params;
+  const {
+    name, image,
+  } = req.body;
+  User.findByIdAndUpdate(id, {
+    name, image,
+  })
+    .then(() => {
+      res.redirect('/users');
+    })
+    .catch(next);
+});
 
 router.post('/:id/confirm', (req, res, next) => {
   const { id } = req.params;
