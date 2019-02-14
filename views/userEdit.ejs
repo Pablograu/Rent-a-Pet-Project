@@ -1,7 +1,7 @@
 <h1>Edit Profile</h1>
 
 <form action="/users/<%=user._id%>/edit" method="POST">
-  <input type="text"   name="name" value="<%=currentUser.name%>" placeholder="name">
-  <input type="text"   name="image" value="<%=currentUser.image%>">
+  <input type="text"   name="name" value="<%=user.name%>" placeholder="name">
+  <input type="text"   name="image" value="<%=user.image%>">
   <input type="submit" value="submit">
 </form>
