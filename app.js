@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
+const fileUpload = require('express-fileupload');
 // const sass = require('sass');
 const notifications = require('./middlewares/notifications');
 const protectedRoute = require('./middlewares/protectedRoute');
@@ -53,6 +54,7 @@ app.use((req, res, next) => {
 });
 app.use(flash());
 app.use(notifications);
+app.use(fileUpload());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

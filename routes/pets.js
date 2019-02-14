@@ -73,6 +73,16 @@ router.post('/adopt/:id', (req, res, next) => {
     });
 });
 
+router.post('/upload', (req, res, next) => {
+  const picFile = req.files.picFile;
+  if (Pet.keys(req.files).length == 0) {
+    return res.status(400).send('No files were uploaded.');
+  } 
+    res.send('File uploaded!');
+  
+
+  });
+
 router.get('/:id/edit', (req, res, next) => {
   const { id } = req.params;
   Pet.findById(id)
