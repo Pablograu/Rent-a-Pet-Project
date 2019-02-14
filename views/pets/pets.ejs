@@ -1,7 +1,7 @@
 
 <%- include('../partials/header'); %>
 
-<ul>
+<ul class="reversed">
 <% pets.forEach((pet) => { %>
 <%if(pet.pending === true || pet.isPending === null){%>
 <div class="card">

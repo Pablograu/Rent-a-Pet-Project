@@ -10,10 +10,7 @@ const petSchema = new Schema({
   ownerId: { type: ObjectId, ref: 'User' }, // duda
   startDay: String,
   endDay: String,
-  image: {
-    type: String,
-    default: 'https://pawedin.com/system/pets/default_images/default_pet.jpg',
-  },
+  image: String,
   adopterName: String,
   isAdopted: Boolean,
   isPending: {

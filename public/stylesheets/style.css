@@ -2,9 +2,9 @@ body {
   font-family: 'Roboto', sans-serif;
  }
  
- a {
-  color: #00B7FF;
- }
+ /* a {
+  color: rgb(6, 14, 17);
+ } */
  
  header{
   background-color: rgb(207, 132, 11);
@@ -40,10 +40,15 @@ body {
  }
  
  .confirmBtn {
-  border-radius: 2px;
   color: white;
-  padding: 0.5rem;
+  padding: 2rem;
+  width: 200px;
+  border-radius: 30px;
   background-color: rgb(207, 132, 11);
+  border-style: none;
+  -webkit-box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
  }
  
  .logo-img {
@@ -123,15 +128,8 @@ body {
 .btnContainer{
   display: flex;
 }
-/* .navbar-pets {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-  
-  margin: 0;
-} */
 
+/* navbar style */
 .navbar {
   display: flex;
   width: 100%;
@@ -209,6 +207,8 @@ body {
   margin-top: 30px;
 }
 
+/* details page */
+
 .details-container {
   display: block;
   text-align: center;
@@ -245,7 +245,7 @@ body {
   font-size: 18px;
   padding: 5px;
 }
-.card:first-of-type{
+.card:last-of-type{
   margin-top: 80px;
 }
 .card{
@@ -267,8 +267,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  
-  
 }
 
 #infoBtn{
@@ -306,14 +304,14 @@ body {
   color: white;
 }
 
-.name-pic-container{
+/* .name-pic-container{
   margin-top: 90px;
   display: flex;
   flex-direction: row;
   width: 100%;
-}
+} */
 
-.prof-pic {
+/* .prof-pic {
   margin: 0;
   text-align: center;
   width: 40%;
@@ -324,7 +322,7 @@ body {
   text-align: left;
   margin: 3rem;
   padding-top: 4rem;
-}
+} */
 
 .aceptDecline{
   display: flex;
@@ -334,6 +332,8 @@ body {
   width: 100px;
   color: white;
 }
+
+/* create page */
 .createContainer{
   display: flex;
   flex-direction: column;
@@ -359,7 +359,64 @@ body {
   box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
   font-size: 18px;
 }
+/* details */
+.reversed{
+  display: flex;
+  flex-direction: column-reverse;
+}
 
+.report a{
+  color: rgb(156, 47, 47);
+  text-decoration: underline;
+}
+
+.report p{
+  margin-top: 15px;
+}
+
+.textDetail{
+  margin-right: 25%;
+  margin-left: 25%;
+  text-align: start;
+}
+
+.detailUnit{
+  font-weight: bold;
+}
 /* .hideme{
   display: none;
 } */
+/* profile */
+.prof-pic{
+  margin-top: 80px;
+  margin-right: 25%;
+  margin-left: 25%;
+  height: 30vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.profile-actions-container{
+  padding: 40px;
+  padding-top: 5px;
+}
+
+.prof-name{
+  padding: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.profileBtns{
+  margin-right: 2rem;
+}
+
+.editBtn{
+  color: white;
+  background-color: #1a1b1c;
+}
+
+.btn .btn-warning .profileBtns{
+  color: #1a1b1c;
+}

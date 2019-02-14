@@ -1,23 +1,30 @@
 <%- include('../views/partials/header.ejs'); %>
 
 <div class="name-pic-container">
-  <div class="prof-pic">
-    <img src="images/default.png" alt="img">
-  </div>
+    <%if(currentUser.image){%>
+      <div class="prof-pic" style="background-image: url('<%= user.image %>')"></div>
+    <%}else{%>
+      <div class="prof-pic" style="background-image: url('https://www.uic.mx/posgrados/files/2018/05/default-user.png')"></div>
+    <%}%>
   <div class="prof-name">
     <h2><%=currentUser.username%>'s profile</h2>
+    <div class="aceptDecline">
+    
+          <a href="/users/<%=currentUser._id%>/edit"><button class="btn editBtn">Edit Profile</button></a>
+
   </div> 
 </div>
 
 <div class="profile-container">
-  <div>
-  <h3 class="touchAndHide">My Pets</h3>
+  <div class="profile-actions-container">
+    <h3 class="touchAndHide">My Pets</h3>
       <%pets.forEach((pet) => {%>
+      <%console.log(pet.ownerId, currentUser)%>
       <%if(pet.ownerName === currentUser.username){%>
-    <div class="petsProfile hideme">
-      <div style="background-image: url('<%= pet.image %>')"></div>
-        <p><%=pet.name%></p>
-        <div class="aceptDecline">
+      <div class="petsProfile hideme">
+        <div style="background-image: url('<%= pet.image %>')"></div>
+         <p><%=pet.name%></p>
+            <div class="aceptDecline">
           <a href="/pets/<%=pet._id%>/edit"><button class="btn btn-warning profileBtns">Edit</button></a>
         <form action="/pets/<%=pet._id%>/delete" method="post">
           <input type="submit" class="btn btn-danger profileBtns" value="Delete">
