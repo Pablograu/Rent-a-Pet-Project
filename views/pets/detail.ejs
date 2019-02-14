@@ -3,7 +3,11 @@
 <div class="details-container">
   <h2>Details</h2>
   <div class="pet-info">
-      <div class="details-img img-detail-container" style="background-image: url('<%= pet.image %>')"></div>
+    <%if(pet.image){%>
+      <div class="cardImage" style="background-image: url('<%= pet.image %>')"></div>
+    <%}else{%>
+      <div class="cardImage" style="background-image: url('https://pawedin.com/system/pets/default_images/default_pet.jpg')"></div> 
+  <%}%>
     </div>
     <div class="detailed-details">
       <p>Name: <%=pet.name%></p>

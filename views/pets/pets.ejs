@@ -5,7 +5,11 @@
 <% pets.forEach((pet) => { %>
 <%if(pet.pending === true || pet.isPending === null){%>
 <div class="card">
-     <div class="cardImage" style="background-image: url('<%= pet.image %>')"></div>
+        <%if(pet.image){%>
+            <div class="cardImage" style="background-image: url('<%= pet.image %>')"></div>
+            <%}else{%>
+            <div class="cardImage" style="background-image: url('https://pawedin.com/system/pets/default_images/default_pet.jpg')"></div> 
+            <%}%>
     <div>
         <li class="listli">My name is <a href="/pets/<%=pet._id%>"><%= pet.name %></a></li>
         <li class="listli">From: <a href="/pets/<%=pet._id%>"><%= pet.startDay %></a></li>

@@ -12,7 +12,7 @@ const petSchema = new Schema({
   endDay: String,
   image: {
     type: String,
-    default: ('https://pawedin.com/system/pets/default_images/default_pet.jpg'),
+    default: 'https://pawedin.com/system/pets/default_images/default_pet.jpg',
   },
   adopterName: String,
   isAdopted: Boolean,
