@@ -394,3 +394,11 @@ body {
     opacity: 0;
   }
 }
+
+.alert-danger {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
