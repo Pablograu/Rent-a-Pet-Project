@@ -146,6 +146,7 @@ body {
 .navbar-item {
   flex-grow: 1;
   flex-basis: 50%;
+  margin-top: 9px;
 }
 
 .navbar-item > a {
@@ -155,6 +156,7 @@ body {
 .right {
   display: flex;
   flex-direction: row-reverse;
+  margin-top: 6px;
 }
 
 #closebtn span {
