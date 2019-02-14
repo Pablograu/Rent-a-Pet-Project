@@ -6,20 +6,22 @@
 
    <img class="logo-img" src="/images/logoapp.png" alt="logo">
 
-     <div class="login-container">
-       <label for="username">Username</label>
-       <input class="form-control" name="username" type="text" placeholder="Enter username">
-       <label for="password">Password</label>
-       <input class="form-control" name="password" type="password" placeholder="***********">
-       <% if (errorMessage) { %>
-         <div class="error-message"><%= errorMessage %></div>
-       <% } %>
-     </div>
-     <div class="btnContainer">
-     <button id="signupBtn" type="submit" class="btn btn-primary">Login</button>
-     </div>
-     <div class="signin-container">
-       <p class="account-message">Don't have an account? <a href="/auth/signup">Sign up</a></p>
-     </div>
+   <div class="outer-login-container">
+    <div class="login-container">
+        <label for="username">Username</label>
+        <input class="form-control" name="username" type="text" placeholder="Enter username">
+        <label for="password">Password</label>
+        <input class="form-control" name="password" type="password" placeholder="***********">
+        <% if (errorMessage) { %>
+          <div class="error-message"><%= errorMessage %></div>
+        <% } %>
+      </div>
+      <div class="btnContainer">
+      <button id="signupBtn" type="submit" class="btn btn-primary">Login</button>
+      </div>
+      <div class="signin-container">
+        <p class="account-message">Don't have an account? <a href="/auth/signup">Sign up</a></p>
+      </div>
+   </div>  
  </div>
 </form>
