@@ -144,6 +144,7 @@ body {
 .navbar-item {
   flex-grow: 1;
   flex-basis: 50%;
+  margin-top: 9px;
 }
 
 .navbar-item > a {
@@ -153,6 +154,7 @@ body {
 .right {
   display: flex;
   flex-direction: row-reverse;
+  margin-top: 6px;
 }
 
 #closebtn span {
@@ -168,7 +170,7 @@ body {
 }
 #menulist {
   height: 0;
-  z-index: 1;
+  /* z-index: 1; */
   width: 100%;
   transition-duration: 0.3s;
 }
@@ -178,6 +180,7 @@ body {
 }
 #menulist li {
   display: none;
+  opacity: 0;
 }
 
 #menulist li a {
@@ -195,11 +198,23 @@ body {
 
 #menulist.show-menu li{
   display: block;
+  opacity: 1;
+  animation: fadeIn 1s;
 }
 
 #menulist li {
   padding: 20px 0;
   text-align: center;
+  transition-delay: 5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .account-message{
@@ -419,4 +434,32 @@ body {
 
 .btn .btn-warning .profileBtns{
   color: #1a1b1c;
+.alert-success {
+  margin-top: 9vh;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeOut 6s;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.alert-danger {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
 }
