@@ -65,6 +65,13 @@ body {
   margin: 1% 12% 5% 12%;
   min-height: 80%;
   padding: 1rem;
+  
+ }
+
+ .outer-login-container {
+  transform: rotateY(360deg);
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease;
  }
 
  .signup-container {
