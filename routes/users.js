@@ -30,12 +30,14 @@ router.get('/:id/edit', (req, res, next) => {
 router.post('/:id/edit', (req, res, next) => {
   const { id } = req.params;
   const {
-    name, image,
+    username,
+    image,
   } = req.body;
   User.findByIdAndUpdate(id, {
-    name, image,
-  })
-    .then(() => {
+    username, image,
+  }, { new: true })
+    .then((user) => {
+      req.session.currentUser = user;
       res.redirect('/users');
     })
     .catch(next);

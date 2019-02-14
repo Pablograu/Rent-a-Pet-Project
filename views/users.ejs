@@ -2,12 +2,13 @@
 
 <div class="name-pic-container">
     <%if(currentUser.image){%>
-      <div class="prof-pic" style="background-image: url('<%= user.image %>')"></div>
+      <div class="prof-pic" style="background-image: url('<%= currentUser.image %>')"></div>
     <%}else{%>
       <div class="prof-pic" style="background-image: url('https://www.uic.mx/posgrados/files/2018/05/default-user.png')"></div>
     <%}%>
   <div class="prof-name">
     <h2><%=currentUser.username%>'s profile</h2>
+    <%console.log(currentUser)%>
     <div class="aceptDecline">
     
           <a href="/users/<%=currentUser._id%>/edit"><button class="btn editBtn">Edit Profile</button></a>

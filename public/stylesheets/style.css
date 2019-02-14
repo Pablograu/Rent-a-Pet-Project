@@ -365,7 +365,7 @@ body {
 #createBtn{
   border-radius: 30px;
   border-style: none;
-  background-color: rgb(97, 66, 10);
+  background-color: rgb(207, 132, 11);
   color: white;
   font-size: 16px;
   margin-top: 30px;
@@ -434,6 +434,8 @@ body {
 
 .btn .btn-warning .profileBtns{
   color: #1a1b1c;
+}
+
 .alert-success {
   margin-top: 9vh;
   z-index: 2;
@@ -462,4 +464,49 @@ body {
   top: 0;
   width: 100%;
   text-align: center;
+}
+
+.editContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.editContainer input{
+  width: 100%;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgb(39, 37, 33);
+}
+
+#editBtn{
+  border-radius: 30px;
+  border-style: none;
+  background-color:rgb(207, 132, 11);
+  color: white;
+  font-size: 16px;
+  margin-top: 30px;
+  -webkit-box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  font-size: 18px;
+}
+
+#editProfileBtn{
+  border-radius: 30px;
+  border-style: none;
+  background-color:rgb(207, 132, 11);
+  color: white;
+  font-size: 16px;
+  margin-top: 30px;
+  -webkit-box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 8px 22px -4px rgba(0,0,0,0.75);
+  font-size: 18px;
+}
+
+.editH1{
+  margin-top: 80px;
+  padding-left: 40px;
 }

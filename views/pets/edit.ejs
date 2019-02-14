@@ -1,11 +1,22 @@
+<%- include('../partials/header')%>
 <h1>Edit information</h1>
-<div class="editPet">
-<form action="/pets/<%=pet._id%>/edit" method="POST">
-  <input type="text"   name="name" value="<%=pet.name%>" placeholder="name">
-  <input type="date"   name ="startDay"value="<%=pet.startDay%>" placeholder="date">
-  <input type="date"   name ="endDay"value="<%=pet.endDay%>" placeholder="date">
-  <input type="text"   name="image" value="<%=pet.image%>">
-  <input type="text"   name="description" value="<%=pet.description%>" placeholder="description">
-  <input type="submit" value="submit">
-</form>
+<div class="editContainer">
+  <form action="/pets/<%=pet._id%>/edit" method="POST">
+    <div class="editInput">
+      <input type="text"   name="name" value="<%=pet.name%>" placeholder="name">
+    </div>
+    <div class="editInput">
+      <input type="date"   name ="startDay"value="<%=pet.startDay%>" placeholder="date">
+    </div>
+    <div class="editInput">
+      <input type="date"   name ="endDay"value="<%=pet.endDay%>" placeholder="date">
+    </div>
+    <div class="editInput">
+      <input type="text"   name="image" value="<%=pet.image%>">
+    </div>
+    <div class="editInput">
+      <input type="text"   name="description" value="<%=pet.description%>" placeholder="description">
+    </div>
+    <input id="editBtn" type="submit" value="submit">
+  </form>
 </div>

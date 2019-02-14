@@ -1,7 +1,11 @@
-<h1>Edit Profile</h1>
-
+<%- include('./partials/header')%>
+<h2 class="editH1">Edit Profile</h1>
+<div class="editContainer">
 <form action="/users/<%=user._id%>/edit" method="POST">
-  <input type="text"   name="name" value="<%=user.name%>" placeholder="name">
-  <input type="text"   name="image" value="<%=user.image%>">
-  <input type="submit" value="submit">
+  <label for="name">Username</label>
+    <input type="text"   name="username" value="<%=user.username%>" placeholder="name">
+  <label for="image">Select Image</label>
+    <input type="text"   name="image" value="<%=user.image%>">
+  <input id="editProfileBtn" type="submit" value="submit">
 </form>
+</div>
