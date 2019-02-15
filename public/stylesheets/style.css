@@ -438,7 +438,6 @@ body {
 
 .alert-success {
   margin-top: 9vh;
-  z-index: 2;
   opacity: 0;
   animation: fadeOut 6s;
   position: absolute;
@@ -447,6 +446,7 @@ body {
   border-style: solid;
   border-width: 1px;
   text-align: center;
+  z-index: 1;
 }
 
 @keyframes fadeOut {
