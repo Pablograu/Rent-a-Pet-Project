@@ -23,7 +23,7 @@
             <button class="btn btn-primary confirmBtn">Confirm</button>
             </form>
         <% } else if (pet.isPending === true && pet.ownerName !== currentUser.username) {%>
-        <button type="button" class="btn btn-warning">Pending</button>
+        <button type="button" class="pending">Pending</button>
         <%}%>
         <span class="report"><p>Is there something wrong? <a href="#">Report it</a></p></span>
       </div>
