@@ -149,6 +149,7 @@ body {
 
 .navbar-item > a {
   color: white;
+  font-size: 2rem;
 }
 
 .right {
@@ -159,6 +160,7 @@ body {
 
 #closebtn span {
   margin-top:5px;
+  margin-bottom: 2px;
   background-color:#fff;
   width:25px;
   height:3px;
@@ -168,6 +170,17 @@ body {
   border-radius:15%;
   transition: all .3s;
 }
+
+#closebtn.open span.line1 {
+  transform: translateY(8px) translateX(0) rotate(45deg); 
+}
+#closebtn.open span.line2 {
+  opacity: 0; 
+}
+#closebtn.open span.line3 {
+  transform: translateY(-8px) translateX(0) rotate(-45deg); 
+}
+
 #menulist {
   height: 0;
   /* z-index: 1; */

@@ -3,11 +3,10 @@ function main() {
   const menuDropped = document.getElementById('menulist');
   const navButton = document.getElementById('closebtn');
 
-  function navToggle() {
+  navButton.addEventListener('click', () => {
     menuDropped.classList.toggle('show-menu');
-  }
-
-  navButton.addEventListener('click', navToggle);
+    navButton.classList.toggle('open');
+  });
 }
 
 // const ex = document.querySelector('.touchAndHide');
