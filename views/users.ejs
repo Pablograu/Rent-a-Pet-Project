@@ -1,46 +1,33 @@
 <%- include('../views/partials/header.ejs'); %>
 
-<div class="name-pic-container">
+<div class="userInfo">
     <%if(currentUser.image){%>
       <div class="prof-pic" style="background-image: url('<%= currentUser.image %>')"></div>
     <%}else{%>
       <div class="prof-pic" style="background-image: url('https://www.uic.mx/posgrados/files/2018/05/default-user.png')"></div>
     <%}%>
-  <div class="prof-name">
     <h2><%=currentUser.username%>'s profile</h2>
-    <%console.log(currentUser)%>
-    <div class="aceptDecline">
-    
-          <a href="/users/<%=currentUser._id%>/edit"><button class="btn editBtn">Edit Profile</button></a>
-
-  </div> 
 </div>
 
-<div class="profile-container">
-  <div class="profile-actions-container">
-    <h3 class="touchAndHide">My Pets</h3>
-      <%pets.forEach((pet) => {%>
-      <%console.log(pet.ownerId, currentUser)%>
-      <%if(pet.ownerName === currentUser.username){%>
-      <div class="petsProfile hideme">
-        <div style="background-image: url('<%= pet.image %>')"></div>
-         <p><%=pet.name%></p>
-            <div class="aceptDecline">
+<a href="/users/<%=currentUser._id%>/edit"><button class="btn editBtn">Edit Profile</button></a>
+  
+<div class="myPetsContainer">
+<h3>My Pets</h3>
+    <%pets.forEach((pet) => {%>
+    <%if(pet.ownerName === currentUser.username){%>
+        <p><%=pet.name%></p>  
+        <div class="aceptDecline">
           <a href="/pets/<%=pet._id%>/edit"><button class="btn btn-warning profileBtns">Edit</button></a>
-        <form action="/pets/<%=pet._id%>/delete" method="post">
-          <input type="submit" class="btn btn-danger profileBtns" value="Delete">
-        </form>
-      <div></div>
+          <form action="/pets/<%=pet._id%>/delete" method="post">
+            <input type="submit" class="btn btn-danger profileBtns" value="Delete">
+          </form>
+        </div>
     <%}%>
-    </div>
     <%})%>
-  </div>
-
-  <div>
-  <h3>Requests</h3>
+  
+<h3>Requests</h3>
     <%pets.forEach((pet) => {%>
     <%if(pet.isPending && pet.ownerName === currentUser.username){%>
-    <div>
       <p><%=pet.adopterName%> wants to take care of <%=pet.name%> from <%=pet.startDay%>  untill <%=pet.endDay%></p>
         <div class="aceptDecline">
           <form action="/users/<%=pet.id%>/confirm" method="Post">
@@ -51,21 +38,16 @@
           </form>
         </div>
     <%}%>
-    </div>
-      <%})%>
-  </div>
+    <%})%>
 
-  <div>
+
+<h3>Next petsittings: </h3>
       <%pets.forEach((pet) => {%>
       <%if(pet.isAdopted === true && pet.adopterName === currentUser.username){%>
-      <h3>Next petsittings: </h3>
-    <div>
       <p>Soon you'll be taking care of <%=pet.name%></p>
     <%}%>
-    </div>
     <%})%>
-  </div>
-</div>
+</div> 
 
 <%# <form action="/auth/logout" method="GET" id="form">
   <button>Log out</button>
